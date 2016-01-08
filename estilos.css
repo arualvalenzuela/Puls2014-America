@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'open_sansregular';
     src: url('fuentes/OpenSans-Regular-webfont.eot');
     src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -8,7 +8,54 @@
     font-weight: normal;
     font-style: normal;
 
+}*/
+
+@font-face {
+    font-family: 'pulsa';
+    src:    url('fuentes/pulsa.eot?2hegfx');
+    src:    url('fuentes/pulsa.eot?2hegfx#iefix') format('embedded-opentype'),
+        url('fuentes/pulsa.ttf?2hegfx') format('truetype'),
+        url('fuentes/pulsa.woff?2hegfx') format('woff'),
+        url('fuentes/pulsa.svg?2hegfx#pulsa') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'pulsa' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-estrella:before {
+    content: "\e900";
+    color: #FFBE2C;
+    margin-right: 0.4em;
+    position: relative;
+    top: .1em;
+
+}
+.icon-f_arriba:before {
+    content: "\e901";
+}
+.icon-f_abajo:before {
+    content: "\e902";
+    color: #004F24;
+}
+.icon-lapiz:before {
+    content: "\e903";
+    margin-right: 0.8em;
+}
+
 
 
 
@@ -19,7 +66,8 @@ a
 body
 {
 	background: #EEEEEE;
-	font-family: "open_sansregular";
+	/*font-family: "open_sansregular";*/
+	font-family: "Open Sans";
 	font-size: 16px;
 }
 
@@ -83,19 +131,39 @@ header #avatar img
 	width: 55px;
 
 }
-header #logo img
+header #logo
 {
-	border-right: 1px solid white;
-	margin-right: 0.5em;
-	padding-right: 0.5em;
-	width: 52px;
+   /*--webkit-transform:rotate(90deg);
+   --moz-transform:rotate(90deg);
+   --o-transform:rotate(90deg);
+   --ms-transform:rotate(90deg);*/
+   border-right: 1px solid white;
+   margin-right: 0.5em;
 
 }
 
+
+header #logo img
+{
+	margin-right: 0.5em;
+	padding-right: 0.5em;
+	width: 52px;
+	-webkit-transition:.5s;
+
+}
+
+header #logo img:hover
+{
+   -webkit-transform:rotate(90deg);
+
+
+}
 nav
 {
-	background:#80BCA3;
+	background:#fa502a;
+	padding: 0 5em 0 0;
 	position: relative;
+
 
 }
 
@@ -121,14 +189,34 @@ nav ul #publicar_nav a
    box-shadow:rgba(0,0,0,0.5) 5px 5px 20px;
 
    font-style: italic;
-   padding: 0.6em 0.8em;
+   padding: 0.8em 0.5em 0.8em 2.5em;
    text-decoration: none;
    text-shadow:rgba(0,0,0,0.5) 2px 2px 5px;
+   
+}
+
+nav ul #publicar_nav a:before{
+	position: absolute;
+	left: .2em;
+	top: .7em;
+}
+
+nav ul #publicar_nav a:hover:before{
+	font-size: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+}
+
+
+nav ul li a:hover{
+	background:#343854;
 }
 nav ul li
 {
 	display: inline-block;
-	margin:0 0.5em 0 0;
+	margin:0 1em 0 0;
 }
 
 nav ul li a
@@ -136,7 +224,13 @@ nav ul li a
 	color: white;
 	display: block;
 	padding: 0.5em;
-	text-decoration: none;
+	-webkit-transition:.3s;
+	
+}
+
+aside
+{
+	display: none;
 }
 
 #contenido
@@ -215,6 +309,10 @@ nav ul li a
 	
 }
 
+#contenido .item .votacion a
+{
+	text-decoration: none;
+}
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
@@ -222,5 +320,35 @@ nav ul li a
 }
 
 
+/*@media print{
+	body{
+		font-size: 50px;
+	}
+}*/
+@media screen and (min-width: 800px){
+	#contenido{
+		overflow: hidden;
+	}
+	#contenido .item{
+		width: 49%;
+		float: left;
 
+	}
+
+	#contenido .item:nth-child(odd){
+     margin-right: 2%;
+	}
+}
+
+@media screen and (min-width: 1000px){
+     aside{
+     	display: block;
+     	float: right;
+     	margin: 1em;
+     	width: 20%;
+     }
+     aside video{
+         width: 100%;
+     }
+}
 
