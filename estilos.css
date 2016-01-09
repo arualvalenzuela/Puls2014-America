@@ -154,7 +154,7 @@ header #logo img
 
 header #logo img:hover
 {
-   -webkit-transform:rotate(90deg);
+   -webkit-transform:rotate(360deg);
 
 
 }
