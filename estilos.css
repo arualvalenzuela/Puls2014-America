@@ -148,13 +148,15 @@ header #logo img
 	margin-right: 0.5em;
 	padding-right: 0.5em;
 	width: 52px;
-	-webkit-transition:.5s;
+	/*-webkit-transition:.5s;*/
 
 }
 
 header #logo img:hover
 {
    -webkit-transform:rotate(360deg);
+	-webkit-transition:.5s;
+
 
 
 }
